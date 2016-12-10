@@ -113,6 +113,21 @@
 			</div>
 		
 			<div class="offers">
+				<div id="template-offer" class="offer-outer" style="display: none;">
+					<a  class="offer"
+					  >
+						<img class="offer-image" src="images/carrot.png" style="width:350px; height:300px"  alt="">
+						<dl class="offer-properties properties">
+							<dd class="offer-name">Karroten</dd>
+							<dd class="offer-price">
+								Menge 10 Stk
+							</dd>
+							<dd  style="margin-bottom:35px" class="offer-highest">Franz Kienegger</dd>
+						</dl>
+						<button style="margin-left:25px;margin-bottom:10px" class="btn btn-primary regiInput" >beantworten</button>
+					</a>
+				</div>
+
 				<div class="offer-outer">
 					<a  class="offer"
 					  >
@@ -209,7 +224,6 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script scr="js/bootstrap.min.js"></script>
 		<script src="js/jquery.bsFormAlerts.js"></script>
-		<script src="js/home.js"></script>
 	<script>
 	    $(document).ready(function(){
 		    $(".dropdown").hover(            
@@ -223,7 +237,15 @@
 	        	}
 	    	);
 
+		    /* Löscht Benachrichtigung und reduziert badge counter*/
+		    $(".close").click(function() {
+				var id = $(this).parent().attr('id');
+				$('#' + id).remove();
+				$('#alert-count').html(parseInt($('#alert-count').html(), 10) - 1);
+			});
+
 		});
+
       	$(function(){
         var $window = $(window);
         $("#zutat").submit(function() {
@@ -244,11 +266,18 @@
                 priority: "info"
               }
             ]);
-            // hier das neue element hinzufügen
 
+
+            $('#template-offer')
+            .clone()
+            .css('display', 'inline-block')
+            .appendTo($('.offers'));
+
+            /*
             var newBut = $('<button id="item"></button>').text(inputVal);
             $(".featured-area").append(newBut);
             $("#inputZutat").val('');
+            */
           }
           return false;
         });
