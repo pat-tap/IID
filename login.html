@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, inital-scope=1">
+		<meta name="description" content="Interface Website">
+		<meta name="author" content="Franz Kienegger">		
+		<title>Foodsharing Plattform</title>	
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/blog.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	</head>
+	
+	
+	<body>
+	
+		
+    <div class="container">
+		<!-- Static navbar -->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+			  <div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				</button>
+				<a class="navbar-brand" href="#">Foodsharing Plattform</a>
+			  </div>
+			  <div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+				  <li> <input class="form-control" style="margin-top: 10px; width:200px; margin-left:15px" type="text" id="InputEmail" placeholder="Username"></li>
+				  <li> <input class="form-control" style="margin-top: 10px; width:200px; margin-left:15px" type="password" id="password" placeholder="Password"></li>
+				  <li> <input style="margin-top: 8px; width:100px;margin-left:15px" class="btn btn-primary" type="blog-nav button" onclick="location.href='home.html';" value="Login" /> </li>
+				</ul>
+			  </div><!--/.nav-collapse -->
+			</div><!--/.container-fluid -->
+		</nav>
+    </div> <!-- /container -->
+
+	
+		<div class="container">	
+		<form method="get" action="home.html">
+			<div class="row">					
+				<div class="col-md-12 blog-main ">
+					<div class="blog-header">
+							<h1 class="blog-title">Registration:</h1>
+					</div>
+					<br>
+					<div class="featured-area ">
+						<table style="width:70%">
+						
+							
+							<tr style="width:15%">
+								<td  class="text-right" style="padding-top:10px; margin-top:50px; width:40%;"><label>Username</label></td>
+								<td class="text-center" style="padding-left: 5%;  "><input class="form-control regiInput" style="  vertical-align: top;"type="text" id="inputUsername" placeholder="Username"></td>
+							</tr>
+							<tr style="width:15%">
+								<td  class="text-right" style="width:40%;"><label>Password</label></td>
+								<td style="padding-left: 5%; width:10%; "><input class="form-control regiInput"  type="text" id="inputPassword" placeholder="Password"></td>
+							</tr>
+							
+							<tr style="width:15%;">
+								<td  class="text-right" style="width:40%;"><label>Code</label></td>
+								<td style="padding-left: 5%; vertical-align:middle; "><input class="form-control regiInput"   type="text" id="inputCode" placeholder="Code"></td>
+							</tr>
+							
+							<tr style="width:15%;">
+								<td  class="text-right" style="width:40%;"><label>E-Mail</label></td>
+								<td style="padding-left: 5%;  "><input class="form-control regiInput"   type="text" id="inputEmail" placeholder="optional"></td>
+							</tr>
+							
+							<tr style="width:15%">
+								<td  class="text-right" style="width:40%;margin-top:10px  "><label>Studentenheim</label></td>
+								<td style="padding-left: 5%;  "> 
+								 <select class="form-control regiInput">
+								  <option>Höfergasse</option>
+								  <option>Ulmannstraße</option>
+								  <option>Boku Heim</option>
+								  <option>Haus Oberösterrreich</option>
+								  <option>Erlachplatz</option>
+								</select>
+								</td>
+							</tr>
+							
+							<tr style="width:15%;">
+								<td  class="text-right" style="width:40%;"><label>Zimmer-Nr</label></td>
+								<td style="padding-left: 5%; width:50%; "><input class="form-control regiInput"  type="text" id="inputNr" placeholder="Nr"></td>
+							</tr>
+							
+							
+								
+							<tr style="width:15%;margin-bottom:50px">
+								<td  class="text-right" style="width:40%;"></td>
+								<td style="padding-left: 5%; width:50%; "><button style="margin-bottom: 150px; " class="btn btn-primary regiInput" type="submit">Registration</button></td>
+							</tr>
+							
+							<tr/>
+						</table>
+								
+					</div>
+		
+				</div>
+				</form>	
+			</div>
+				
+		</div>
+
+				
+
+	
+		<footer class="footer">
+		  <div class="container">
+			<p class="text-muted"> <a href="#" class="glyphicon myIcon  glyphicon-copyright-mark"></a>  Foodsharing 2016</p>
+		  </div>
+		</footer>
+		
+		
+	
+	
+		<script scr="https://ajax.googleapis/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script scr="js/bootstrap.min.js"></script>
+	
+	</body>
+</html>
