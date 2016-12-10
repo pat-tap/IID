@@ -10,6 +10,7 @@
 		
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/blog.css" rel="stylesheet">
+		<link href="css/mega_dropdown.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	</head>
 		
@@ -32,12 +33,35 @@
               <li class="active"><a href="Angebot.html">Angebote</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li> <a href="#" class="blog-nav glyphicon"> <span class="label label-default label-as-badge">2</span> </a></li>		
-              <li> <a href="#" class="blog-nav glyphicon glyphicon-user"> User-Area  </a></li>	
-              <li><a href="#" class="blog-nav glyphicon glyphicon-cog"> Einstellungen  </a></li>
-              <li><a href="#" class="blog-nav glyphicon glyphicon-off"> Abmelden</a></li>
+              <li class="dropdown mega-dropdown">
+					<a href="#" class="dropdown-toggle glyphicon blog-nav" data-toggle="dropdown"><span class="badge pull">3</span> Benachrichtigungen <span class="caret"></span></a>				
+					<ul class="dropdown-menu mega-dropdown-menu">
+						<li class="col-sm-8">
+							<ul>
+								<li class="dropdown-header">Ihre Nachfragen</li>                            
+	                            <div id="items" class="carousel slide" data-ride="carousel">
+	                              <div class="carousel-inner">
+	                                Karotten von Zimmer 404                            
+	                              </div>  
+	                              <div class="carousel-inner">
+	                                Zucker von Zimmer 303                            
+	                              </div> 
+	                              <div class="carousel-inner">
+	                                Speck von Zimmer 101                            
+	                              </div>
+	                            </div>
+							</ul>
+						</li>
+						
+					</ul>				
+				</li>
+	            <li> <a href="#" class="blog-nav glyphicon glyphicon-user"> User-Area  </a></li>	
+	            <li><a href="#" class="blog-nav glyphicon glyphicon-cog"> Einstellungen  </a></li>
+	            <li><a href="#" class="blog-nav glyphicon glyphicon-off"> Abmelden</a></li>
             </ul>
           </div><!--/.nav-collapse -->
+          <div>
+          </div>
         </div><!--/.container-fluid -->
       </nav>
 
@@ -96,7 +120,19 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script scr="js/bootstrap.min.js"></script>
 		<script src="js/jquery.bsFormAlerts.js"></script>
-    <script>
+	<script>
+	    $(document).ready(function(){
+		    $(".dropdown").hover(            
+		        function() {
+		            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+		            $(this).toggleClass('open');        
+		        },
+		        function() {
+		            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+	            	$(this).toggleClass('open');       
+	        	}
+	    	);
+		});
       $(function(){
         var $window = $(window);
         $("#zutat").submit(function() {
