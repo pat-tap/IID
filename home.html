@@ -34,20 +34,23 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="dropdown mega-dropdown">
-					<a href="#" class="dropdown-toggle glyphicon blog-nav" data-toggle="dropdown"><span class="badge pull">3</span> Benachrichtigungen <span class="caret"></span></a>				
+					<a href="#" class="dropdown-toggle glyphicon blog-nav" data-toggle="dropdown"><span id="alert-count" class="badge pull">3</span> Benachrichtigungen <span class="caret"></span></a>
 					<ul class="dropdown-menu mega-dropdown-menu">
 						<li class="col-sm-8">
 							<ul>
 								<li class="dropdown-header">Ihre Nachfragen</li>                            
 	                            <div id="items" class="carousel slide" data-ride="carousel">
-	                              <div class="carousel-inner">
+	                              <div id="alert_1" class="carousel-inner">
 	                                Karotten von Zimmer 404                            
+	                                <a href="#" class="close">&times;</a>
 	                              </div>  
-	                              <div class="carousel-inner">
-	                                Zucker von Zimmer 303                            
+	                              <div id="alert_2" class="carousel-inner">
+	                                Zucker von Zimmer 303
+	                                <a href="#" class="close">&times;</a>                            
 	                              </div> 
-	                              <div class="carousel-inner">
-	                                Speck von Zimmer 101                            
+	                              <div id="alert_3" class="carousel-inner">
+	                                Speck von Zimmer 101
+	                                <a href="#" class="close">&times;</a>                            
 	                              </div>
 	                            </div>
 							</ul>
@@ -57,7 +60,7 @@
 				</li>
 	            <li> <a href="#" class="blog-nav glyphicon glyphicon-user"> User-Area  </a></li>	
 	            <li><a href="#" class="blog-nav glyphicon glyphicon-cog"> Einstellungen  </a></li>
-	            <li><a href="#" class="blog-nav glyphicon glyphicon-off"> Abmelden</a></li>
+	            <li><a href="login.html" class="blog-nav glyphicon glyphicon-off"> Abmelden</a></li>
             </ul>
           </div><!--/.nav-collapse -->
           <div>
@@ -206,6 +209,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script scr="js/bootstrap.min.js"></script>
 		<script src="js/jquery.bsFormAlerts.js"></script>
+		<script src="js/home.js"></script>
 	<script>
 	    $(document).ready(function(){
 		    $(".dropdown").hover(            
@@ -218,6 +222,7 @@
 	            	$(this).toggleClass('open');       
 	        	}
 	    	);
+
 		});
       	$(function(){
         var $window = $(window);
