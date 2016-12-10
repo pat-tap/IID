@@ -6,7 +6,7 @@
 		<meta name="description" content="Interface Website">
 		<meta name="author" content="Franz Kienegger">
 		
-		<title>Foodsharing Plattform - Nachfragen</title>
+		<title>Foodsharing Plattform - Angebote</title>
 		
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/blog.css" rel="stylesheet">
@@ -17,7 +17,7 @@
 	<body>
 	
 		
-    <div class="container">
+    <div class="container"> 
 
       <!-- Static navbar -->
       <nav class="navbar navbar-default">
@@ -65,7 +65,6 @@
         </div><!--/.container-fluid -->
       </nav>
 
-
       <!-- Header with Search Box -->
       <div class="jumbotron">
 			<div class="row">
@@ -81,7 +80,7 @@
 				
 				
 				<div style="margin-top:20px"     class="col-md-2">
-					<p class="blog-nav; margin-left:50px;" style="font-size:20px">Anfrage stellen</p>
+					<p class="blog-nav; margin-left:50px;" style="font-size:20px">Sharing is caring</p>
 					<ul >
 						<form class="form-horizontal" id="zutat">
 							<input class="form-control regiInput" style="  vertical-align: top;"type="text" id="inputZutat" placeholder="Zutat">
@@ -90,7 +89,7 @@
 							  <option>nachfragen</option>
 							</select>					
 							<span data-alertid="zutat"></span>	
-							<button style="margin-bottom: 150px; " class="btn btn-primary regiInput" type="submit">Anfrage aufgeben</button>	
+							<button style="margin-bottom: 150px; " class="btn btn-primary regiInput" type="submit">aufgeben</button>	
 						</form>
 					</ul>						
 				</div>
@@ -102,9 +101,9 @@
 			<div class="row">
 				<div class="col-md-12 blog-main ">
 					<div class="blog-header">
-							<h1 class="blog-title">Nachfragen:</h1>
-								<div class="featured-area ">
-									<button>sdfdf</button>
+							<h1 class="blog-title">Angebote:</h1>
+								<div class="featured-area " >
+									<button id="item">sdfdf</button>
 								</div>
 					</div>
 				</div>
@@ -121,20 +120,20 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script scr="js/bootstrap.min.js"></script>
 		<script src="js/jquery.bsFormAlerts.js"></script>
-    <script>
-    $(document).ready(function(){
-	    $(".dropdown").hover(            
-	        function() {
-	            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
-	            $(this).toggleClass('open');        
-	        },
-	        function() {
-	            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
-            	$(this).toggleClass('open');       
-        	}
-    	);
-	});
-     $(function(){
+	<script>
+	    $(document).ready(function(){
+		    $(".dropdown").hover(            
+		        function() {
+		            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+		            $(this).toggleClass('open');        
+		        },
+		        function() {
+		            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+	            	$(this).toggleClass('open');       
+	        	}
+	    	);
+		});
+      	$(function(){
         var $window = $(window);
         $("#zutat").submit(function() {
           var inputVal = $("#inputZutat").val();
@@ -155,14 +154,21 @@
               }
             ]);
             // hier das neue element hinzufügen
-            
-            var newBut = $("<button></button>").text(inputVal);
+
+            var newBut = $('<button id="item"></button>').text(inputVal);
             $(".featured-area").append(newBut);
             $("#inputZutat").val('');
           }
           return false;
         });
-      });
+      	});
+      
+	  	$('body').on('click','#item',function(){
+	  		var con = confirm('Zutat bereitstellen?');
+		     if(con == true){
+		     	      $(this).css('background-color', 'green');
+		     }
+	  	});
     </script>
   
 	</body>

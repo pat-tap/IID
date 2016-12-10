@@ -80,7 +80,7 @@
 				
 				
 				<div style="margin-top:20px"     class="col-md-2">
-					<p class="blog-nav; margin-left:50px;" style="font-size:20px">Angebot stellen</p>
+					<p class="blog-nav; margin-left:50px;" style="font-size:20px">Sharing is caring</p>
 					<ul >
 						<form class="form-horizontal" id="zutat">
 							<input class="form-control regiInput" style="  vertical-align: top;"type="text" id="inputZutat" placeholder="Zutat">
@@ -89,7 +89,7 @@
 							  <option>nachfragen</option>
 							</select>					
 							<span data-alertid="zutat"></span>	
-							<button style="margin-bottom: 150px; " class="btn btn-primary regiInput" type="submit">Angebot aufgeben</button>	
+							<button style="margin-bottom: 150px; " class="btn btn-primary regiInput" type="submit">aufgeben</button>	
 						</form>
 					</ul>						
 				</div>
@@ -102,8 +102,8 @@
 				<div class="col-md-12 blog-main ">
 					<div class="blog-header">
 							<h1 class="blog-title">Angebote:</h1>
-								<div class="featured-area ">
-									<button>sdfdf</button>
+								<div class="featured-area " >
+									<button id="item">sdfdf</button>
 								</div>
 					</div>
 				</div>
@@ -133,7 +133,7 @@
 	        	}
 	    	);
 		});
-      $(function(){
+      	$(function(){
         var $window = $(window);
         $("#zutat").submit(function() {
           var inputVal = $("#inputZutat").val();
@@ -155,13 +155,20 @@
             ]);
             // hier das neue element hinzufügen
 
-            var newBut = $("<button></button>").text(inputVal);
+            var newBut = $('<button id="item"></button>').text(inputVal);
             $(".featured-area").append(newBut);
             $("#inputZutat").val('');
           }
           return false;
         });
-      });
+      	});
+      
+	  	$('body').on('click','#item',function(){
+	  		var con = confirm('Zutat bereitstellen?');
+		     if(con == true){
+		     	      $(this).css('background-color', 'green');
+		     }
+	  	});
     </script>
   
 	</body>
