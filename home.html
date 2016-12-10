@@ -6,7 +6,7 @@
 		<meta name="description" content="Interface Website">
 		<meta name="author" content="Franz Kienegger">
 		
-		<title>Foodsharing Plattform</title>
+		<title>Foodsharing Plattform - Nachfragen</title>
 		
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/blog.css" rel="stylesheet">
@@ -32,9 +32,10 @@
               <li ><a href="Angebot.html">Angebote</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li> <a href="#" class="blog-nav glyphicon glyphicon-user"> User-Area  </a></li>
-              <li><a href="#" class="blog-nav glyphicon glyphicon-cog"> Settings  </a></li>
-              <li><a href="#" class="blog-nav glyphicon glyphicon-off"> Sign out</a></li>
+              <li> <a href="#" class="blog-nav glyphicon"> <span class="label label-default label-as-badge">2</span> </a></li>		
+              <li> <a href="#" class="blog-nav glyphicon glyphicon-user"> User-Area  </a></li>	
+              <li><a href="#" class="blog-nav glyphicon glyphicon-cog"> Einstellungen  </a></li>
+              <li><a href="#" class="blog-nav glyphicon glyphicon-off"> Abmelden</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
@@ -57,22 +58,21 @@
 				<div style="margin-top:20px"     class="col-md-2">
 					<p class="blog-nav; margin-left:50px;" style="font-size:20px">Browse by Genre</p>
 					<ul >
-						<input class="form-control regiInput" style="  vertical-align: top;"type="text" id="inputUsername" placeholder="Zutat">
-						<select class="form-control regiInput">
-						  <option>anbieten</option>
-						  <option>nachfragen</option>
-						</select>						
-						<button style="margin-bottom: 150px; " class="btn btn-primary regiInput" type="submit">aufgeben</button>	
-					</ul>
-						
+						<form class="form-horizontal" id="zutat">
+							<input class="form-control regiInput" style="  vertical-align: top;"type="text" id="inputZutat" placeholder="Zutat">
+							<select class="form-control regiInput">
+							  <option>anbieten</option>
+							  <option>nachfragen</option>
+							</select>					
+							<span data-alertid="zutat"></span>	
+							<button style="margin-bottom: 150px; " class="btn btn-primary regiInput" type="submit">aufgeben</button>	
+						</form>
+					</ul>						
 				</div>
-				
 			</div>
 		</div>
 
     </div> <!-- /container -->
-
-
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 blog-main ">
@@ -93,8 +93,36 @@
 			</div>
 		</footer>
 		
-		<script scr="https://ajax.googleapis/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script scr="js/bootstrap.min.js"></script>
-	
+		<script src="js/jquery.bsFormAlerts.js"></script>
+    <script>
+      $(function(){
+        var $window = $(window);
+        $("#zutat").submit(function() {
+          var inputVal = $("#inputZutat").val();
+          $(document).trigger("clear-alert-id.zutat");
+          if (inputVal.length < 2) {
+            $(document).trigger("set-alert-id-zutat", [
+              {
+                message: "Eingabe zu kurz",
+                priority: "error"
+              }
+            ]);
+          } 
+		  if (inputVal.length > 2) {
+            $(document).trigger("set-alert-id-zutat", [
+              {
+                message: "Ihre Anfrage wurde gesendet",
+                priority: "info"
+              }
+            ]);
+             $("#inputZutat").val('');
+          }
+          return false;
+        });
+      });
+    </script>
+  
 	</body>
 </html>
