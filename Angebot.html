@@ -80,7 +80,7 @@
 				
 				
 				<div style="margin-top:20px"     class="col-md-2">
-					<p class="blog-nav; margin-left:50px;" style="font-size:20px">Browse by Genre</p>
+					<p class="blog-nav; margin-left:50px;" style="font-size:20px">Angebot stellen</p>
 					<ul >
 						<form class="form-horizontal" id="zutat">
 							<input class="form-control regiInput" style="  vertical-align: top;"type="text" id="inputZutat" placeholder="Zutat">
@@ -89,7 +89,7 @@
 							  <option>nachfragen</option>
 							</select>					
 							<span data-alertid="zutat"></span>	
-							<button style="margin-bottom: 150px; " class="btn btn-primary regiInput" type="submit">aufgeben</button>	
+							<button style="margin-bottom: 150px; " class="btn btn-primary regiInput" type="submit">Angebot aufgeben</button>	
 						</form>
 					</ul>						
 				</div>
@@ -153,7 +153,11 @@
                 priority: "info"
               }
             ]);
-             $("#inputZutat").val('');
+            // hier das neue element hinzufügen
+
+            var newBut = $("<button></button>").text(inputVal);
+            $(".featured-area").append(newBut);
+            $("#inputZutat").val('');
           }
           return false;
         });
