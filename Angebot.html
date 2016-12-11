@@ -34,28 +34,44 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="dropdown mega-dropdown">
-					<a href="#" class="dropdown-toggle glyphicon blog-nav" data-toggle="dropdown"><span class="badge pull">3</span> Benachrichtigungen <span class="caret"></span></a>				
+					<a href="#" class="dropdown-toggle glyphicon blog-nav" data-toggle="dropdown"><span class="badge pull" id="alert-count">3</span> Benachrichtigungen <span class="caret"></span></a>				
 					<ul class="dropdown-menu mega-dropdown-menu">
-						<li class="col-sm-8">
-							<ul>
-								<li class="dropdown-header">Ihre Nachfragen</li>                            
-	                            <div id="items" class="carousel slide" data-ride="carousel">
-	                              <div id="alert_1" class="carousel-inner">
-	                                Karotten von Zimmer 404                            
-	                                <a href="#" class="close">&times;</a>
-	                              </div>  
-	                              <div id="alert_2" class="carousel-inner">
-	                                Zucker von Zimmer 303
-	                                <a href="#" class="close">&times;</a>                            
-	                              </div> 
-	                              <div id="alert_3" class="carousel-inner">
-	                                Speck von Zimmer 101
-	                                <a href="#" class="close">&times;</a>                            
-	                              </div>
-	                            </div>
-							</ul>
+						<li class="col-sm-3">
+							<a  class="benachrichtigung" id="alert_1">
+								<img class="offer-image-benachrichtigung" src="images/carrot.png"  alt="">
+								<dl class="offer-properties properties">
+									<dd class="offer-name">Karroten</dd>
+									<dd class="offer-name">
+										Menge 10 Stk von Zimmer 415
+									</dd>
+								</dl>
+								<button style="margin-left:25px;margin-bottom:10px" class="btn btn-primary regiInput close" >löschen</button>
+							</a>
 						</li>
-						
+						<li class="col-sm-3">
+							<a  class="benachrichtigung" id="alert_2">
+								<img class="offer-image-benachrichtigung" src="images/yoghurt.png"  alt="">
+								<dl class="offer-properties properties">
+									<dd class="offer-name">Yoghurt</dd>
+									<dd class="offer-name">
+										Menge 150 Gramm von Zimmer 210
+									</dd>
+								</dl>
+								<button style="margin-left:25px;margin-bottom:10px" class="close btn btn-primary regiInput" >löschen</button>
+							</a>
+						</li>
+						<li class="col-sm-3">
+							<a  class="benachrichtigung" id="alert_3">
+								<img class="offer-image-benachrichtigung" src="images/mango.png"  alt="">
+								<dl class="offer-properties properties">
+									<dd class="offer-name">Mango</dd>
+									<dd class="offer-name">
+										Menge 2 Stk von Zimmer 220
+									</dd>
+								</dl>
+								<button style="margin-left:25px;margin-bottom:10px" class="close btn btn-primary regiInput" >löschen</button>
+							</a>
+						</li>
 					</ul>				
 				</li>
 	            <li> <a href="#" class="blog-nav glyphicon glyphicon-user"> User-Area  </a></li>	

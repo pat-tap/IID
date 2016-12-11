@@ -7,6 +7,9 @@
     box-shadow: none;
     -webkit-box-shadow: none;
 }
+.mega-dropdown-menu  li {
+  float: left;
+}
 .mega-dropdown-menu > li > ul {
   padding: 0;
   margin: 0;

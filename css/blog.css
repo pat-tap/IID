@@ -161,6 +161,16 @@ body {
     border-top-left-radius: 5px;
 }
 
+.offer-image-benachrichtigung {
+    display: block;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    width:140px; 
+    height:120px;
+    margin-left: auto;
+    margin-right: auto
+}
+
 .details-container {
     display: flex;
     flex-direction: column;
