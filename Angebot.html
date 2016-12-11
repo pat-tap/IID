@@ -181,9 +181,9 @@
 							<dd class="offer-price">
 								Menge 10 Stk
 							</dd>
-							<dd class="offer-highest"><p style="font-size:40px; color:green" class="glyphicon glyphicon-ok-circle"></p></dd>
+							<dd class="offer-highest"><p style="font-size:37px; color:green" class="glyphicon glyphicon-ok-circle"></p></dd>
 						</dl>
-						<button style="margin-left:25px;margin-bottom:10px" class="btn btn-primary regiInput" >beantworten</button>
+						<button style="margin-left:25px;margin-bottom:10px" class="btn btn-primary regiInput" disabled>beantworten</button>
 					</a>
 				</div>
 				<div class="offer-outer">
@@ -196,10 +196,10 @@
 								Menge 10 Stk
 							</dd>
 						
-							<dd class="offer-highest"><p style="font-size:40px; color:green" class="glyphicon glyphicon-ok-circle"></p></dd>
+							<dd class="offer-highest"><p style="font-size:37px; color:green" class="glyphicon glyphicon-ok-circle"></p></dd>
 						</dl>
 						
-						<button style="margin-left:25px;margin-bottom:10px" class="btn btn-primary regiInput" >beantworten</button>
+						<button style="margin-left:25px;margin-bottom:10px" class="btn btn-primary regiInput" disabled>beantworten</button>
 					</a>
 				</div>
 				
@@ -257,7 +257,7 @@
               }
             ]);
           } 
-		  if (inputVal.length > 2) {
+		  else {
             $(document).trigger("set-alert-id-zutat", [
               {
                 message: "Ihre Anfrage wurde gesendet",
@@ -266,7 +266,7 @@
             ]);
 
             $('#template-offer')
-            .clone()
+            .clone(true)
             .css('display', 'inline-block')
             .appendTo($('.offers'));
 
@@ -286,6 +286,27 @@
 		     	      $(this).css('background-color', 'green');
 		     }
 	  	});
+		
+		
+		/*
+		Click event for offer
+		*/
+		$(".offer").click(function(){
+			if(!$(this).hasClass("expired")){
+				var con = confirm('Zutat bereitstellen?');
+				if(con == true){
+					$(this).addClass("expired");
+					
+					var checkIcon = '<p style="font-size:37px; color:green" class="glyphicon glyphicon-ok-circle"></p>';
+					$(this).find("dd.offer-highest").removeAttr("style");
+					$(this).find("dd.offer-highest").html(checkIcon);
+					
+					$(this).find("button").attr("disabled", "true");
+					
+					alert("Der Benutzer wurde informiert.")
+				}
+			}
+		});
     </script>
   
 	</body>
