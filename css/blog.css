@@ -9,8 +9,10 @@ body {
 	margin-bottom: 60px;
 	 background: linear-gradient(to bottom, rgba(251,252,253,1) 0%, rgba(211,216,232,1) 100%);
 }
+
 .container {
-	width: 1650px;
+	width: 90%;
+	max-width: 1650px;
 }
 
 .sidebar-setting { 
