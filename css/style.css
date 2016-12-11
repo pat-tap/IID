@@ -4,3 +4,25 @@
 	padding-top: 24px;
 	padding-bottom: 24px;
 }
+
+#search-jumbo ul {
+	padding-left: 0;
+}
+
+#search-jumbo .regiInput {
+	height: 34px;
+	margin-top: 0;
+}
+
+#search-jumbo h3 {
+	height: 28px;
+	margin-bottom: 15px;
+}
+
+#inputMenge {
+	width: 100px;
+}
+
+#inputZutat {
+	width: 200px;
+}
