@@ -21,6 +21,7 @@
 
 #inputMenge {
 	width: 100px;
+	float: left;
 }
 
 #inputZutat {
