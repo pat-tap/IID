@@ -105,9 +105,9 @@
 				<div class="col-md-12 blog-main ">
 					<div class="blog-header">
 							<h1 class="blog-title">Angebote:</h1>
-								<div class="featured-area " >
+								<!--<div class="featured-area " >
 									<button id="item">sdfdf</button>
-								</div>
+								</div>-->
 					</div>
 				</div>
 			</div>
@@ -131,13 +131,13 @@
 				</div>
 				
 				<div class="offer-outer">
-					<a  class="offer"
+					<a  class="offer "
 					  >
-						<img class="offer-image" src="images/carrot.png" style="width:350px; height:300px"  alt="">
+						<img class="offer-image" src="images/chocolate.png" style="width:350px; height:300px"  alt="">
 						<dl class="offer-properties properties">
-							<dd class="offer-name">Karroten</dd>
+							<dd class="offer-name">Schokolade</dd>
 							<dd class="offer-price">
-								Menge 10 Stk
+								Menge: 4 Tafeln
 							</dd>
 							<dd  style="margin-bottom:35px" class="offer-highest">Franz Kienegger</dd>
 						</dl>
@@ -147,25 +147,11 @@
 				<div class="offer-outer">
 					<a  class="offer "
 					  >
-						<img class="offer-image" src="images/carrot.png" style="width:350px; height:300px"  alt="">
+						<img class="offer-image" src="images/yoghurt.png" style="width:350px; height:300px"  alt="">
 						<dl class="offer-properties properties">
-							<dd class="offer-name">Karroten</dd>
+							<dd class="offer-name">Yoghurt</dd>
 							<dd class="offer-price">
-								Menge 10 Stk
-							</dd>
-							<dd  style="margin-bottom:35px" class="offer-highest">Franz Kienegger</dd>
-						</dl>
-						<button style="margin-left:25px;margin-bottom:10px" class="btn btn-primary regiInput" >beantworten</button>
-					</a>
-				</div>
-				<div class="offer-outer">
-					<a  class="offer "
-					  >
-						<img class="offer-image" src="images/carrot.png" style="width:350px; height:300px"  alt="">
-						<dl class="offer-properties properties">
-							<dd class="offer-name">Karroten</dd>
-							<dd class="offer-price">
-								Menge 10 Kg
+								Menge: 150 g
 							</dd>
 							<dd  style="margin-bottom:35px" class="offer-highest">Franz Kienegger</dd>
 						</dl>
@@ -175,11 +161,11 @@
 				<div class="offer-outer">
 					<a  class="offer expired"
 					  >
-						<img class="offer-image" src="images/carrot.png" style="width:350px; height:300px"  alt="">
+						<img class="offer-image" src="images/mango.png" style="width:350px; height:300px"  alt="">
 						<dl class="offer-properties properties">
-							<dd class="offer-name">Karroten</dd>
+							<dd class="offer-name">Mangos</dd>
 							<dd class="offer-price">
-								Menge 10 Stk
+								Menge: 2 Stk
 							</dd>
 							<dd class="offer-highest"><p style="font-size:37px; color:green" class="glyphicon glyphicon-ok-circle"></p></dd>
 						</dl>
@@ -189,11 +175,11 @@
 				<div class="offer-outer">
 					<a  class="offer expired"
 					  >
-						<img class="offer-image" src="images/carrot.png" style="width:350px; height:300px"  alt="">
+						<img class="offer-image" src="images/milk.png" style="width:350px; height:300px"  alt="">
 						<dl class="offer-properties properties">
-							<dd class="offer-name">Karroten</dd>
+							<dd class="offer-name">Milch</dd>
 							<dd class="offer-price">
-								Menge 10 Stk
+								Menge: 1 l
 							</dd>
 						
 							<dd class="offer-highest"><p style="font-size:37px; color:green" class="glyphicon glyphicon-ok-circle"></p></dd>
@@ -293,8 +279,9 @@
 		*/
 		$(".offer").click(function(){
 			if(!$(this).hasClass("expired")){
-				var con = confirm('Zutat bereitstellen?');
-				if(con == true){
+				var con = confirm('Möchten Sie die Zutat annehmen?');
+				var roomNr = prompt("Welche Zimmernummer haben Sie?\n(Nummer wird nur für die Abholung benötigt.)", "");
+				if(con == true && roomNr != null && roomNr != ""){
 					$(this).addClass("expired");
 					
 					var checkIcon = '<p style="font-size:37px; color:green" class="glyphicon glyphicon-ok-circle"></p>';
@@ -303,7 +290,7 @@
 					
 					$(this).find("button").attr("disabled", "true");
 					
-					alert("Der Benutzer wurde informiert.")
+					alert("Der Benutzer/Die Benutzerin wurde informiert.");
 				}
 			}
 		});
