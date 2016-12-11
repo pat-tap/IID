@@ -370,8 +370,7 @@
 		$(".offer").click(function(){
 			if(!$(this).hasClass("expired")){
 				var con = confirm('Möchten Sie die Zutat bereitstellen?');
-				var roomNr = prompt("Welche Zimmernummer haben Sie?\n(Nummer wird nur für die Abholung benötigt.)", "");
-				if(con == true && roomNr != null && roomNr != ""){
+				if(con == true){
 					$(this).addClass("expired");
 					
 					var checkIcon = '<p style="font-size:37px; color:green" class="glyphicon glyphicon-ok-circle"></p>';
