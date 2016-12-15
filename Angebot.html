@@ -91,9 +91,9 @@
 				<div class="col-md-6" >
 					<h3 style="font-size:20px">Angebote filtern</h3>
 					<div style="vertical-align: bottom; margin-right:50px" class="input-group">
-						<input type="text" class="form-control" placeholder="Search for...">
+						<input type="text" class="form-control" id="searchtext" placeholder="Search for...">
 						<span class="input-group-btn">
-							<button class="btn btn-default" type="button">Go!</button>
+							<button class="btn btn-default search" type="button">Go!</button>
 						</span>
 					</div>
 				</div>
@@ -249,6 +249,8 @@
 				$('#' + id).remove();
 				$('#alert-count').html(parseInt($('#alert-count').html(), 10) - 1);
 			});
+
+
 		});
       	$(function(){
         var $window = $(window);
@@ -314,6 +316,19 @@
 			}
 		});
 		
+
+		/*
+		Click event for search
+		*/
+		$(".search").click(function(){
+			$(".offer").each(function() {
+			  if($(this).find("dd.offer-name").text().toLowerCase().indexOf($("#searchtext").val().toLowerCase()) < 0) {
+				$(this).hide();
+			  } else {
+			  	$(this).show();
+			  }
+			});
+		});
 		
 		$(".benachrichtigung").hover(function(){
 			$(".benachrichtigung").css("background-color", "white");
