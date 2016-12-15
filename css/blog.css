@@ -13,6 +13,7 @@ body {
 .container {
 	width: 90%;
 	max-width: 1650px;
+    min-width: 1200px;
 }
 
 .sidebar-setting { 
@@ -82,6 +83,7 @@ body {
     background: #fff;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+    min-height: 150px;
 }
 
 .offer-properties .offer-name,
@@ -170,8 +172,10 @@ body {
     width:140px; 
     height:120px;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
 }
+
+
 
 .details-container {
     display: flex;
